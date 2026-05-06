@@ -1,4 +1,10 @@
 from pathlib import Path
 
-def caminho_existe(caminho):
-    return Path(caminho).exists()
+def convert_to_path(path) -> Path:
+    return Path(path)
+
+def path_exists(path) -> bool:
+    return path.exists()
+
+def path_is_folder(path) -> bool:
+    return path.is_dir()

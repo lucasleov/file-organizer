@@ -1,6 +1,6 @@
 from app.utils import convert_to_path, path_exists, path_is_folder
 
-def organize_folder(path_string) -> None:
+def organize_folder(path_string: str) -> None:
     folder = convert_to_path(path_string)
 
     if not path_exists(folder):

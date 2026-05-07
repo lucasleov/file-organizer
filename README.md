@@ -10,7 +10,7 @@ Python project that organizes files from a folder based on their extensions.
 
 
 
-Read a folder, identify files by extension, moves files to corresponding subfolders and generates a simple log of the actions performed.
+Read a folder, identify files by extension, move files to corresponding subfolders, and generate a simple log of the actions performed.
 
 
 
@@ -18,5 +18,5 @@ Read a folder, identify files by extension, moves files to corresponding subfold
 
 
 
-Project initiated.
+In development.
 

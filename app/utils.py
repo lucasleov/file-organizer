@@ -8,3 +8,11 @@ def path_exists(path: Path) -> bool:
 
 def path_is_folder(path: Path) -> bool:
     return path.is_dir()
+
+def get_extension_folder_name(path : Path) -> str:
+    extension = path.suffix.lower().replace(".", "")
+
+    if extension == "":
+        extension = "no_extension"
+        
+    return extension

@@ -20,3 +20,17 @@ def get_extension_folder_name(path: Path) -> str:
         return "no_extension"
 
     return extension
+
+
+def move_file(file: Path, destination_folder: Path) -> None:
+    destination_path = destination_folder / file.name
+    
+    try:
+        file.rename(destination_path)
+        print(f"Moved: {file.name} -> {destination_folder.name}/")
+    except FileExistsError:
+        print(f"Error: a file named {file.name} already exists in {destination_folder.name}/.")
+    except PermissionError:
+        print(f"Error: permission denied while moving {file.name}.")
+    except OSError as error:
+        print(f"Error while moving {file.name}: {error}")

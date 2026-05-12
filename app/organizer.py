@@ -3,9 +3,14 @@ from app.utils import (
     path_exists,
     path_is_folder,
     get_extension_folder_name,
+    move_file,
     )
 
 def organize_folder(path_string: str) -> None:
+    if not path_string.strip():
+        print("Error: folder path cannot be empty.")
+        return
+    
     folder = convert_to_path(path_string)
 
     if not path_exists(folder):
@@ -18,15 +23,16 @@ def organize_folder(path_string: str) -> None:
 
     print(f"\nReading folder: {folder.resolve()}\n")
 
-    for item in folder.iterdir():
-        if item.is_file():
-            extension = get_extension_folder_name(item)
+    files = [item for item in folder.iterdir() if item.is_file()]
 
-            destination_folder = folder / extension
-            destination_folder.mkdir(exist_ok = True)
+    if not files:
+        print("The selected folder is empty or contains no files to organize.")
+        return
 
-            destination_path = destination_folder / item.name
+    for item in files:
+        extension = get_extension_folder_name(item)
 
-            item.rename(destination_path)
+        destination_folder = folder / extension
+        destination_folder.mkdir(exist_ok = True)
 
-            print(f"Moved: {item.name} -> {destination_folder.name}/")
+        move_file(item, destination_folder)

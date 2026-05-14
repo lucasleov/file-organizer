@@ -9,19 +9,19 @@ from app.utils import (
 
 def organize_folder(path_string: str) -> None:
     if not path_string.strip():
-        print("Error: folder path cannot be empty.")
+        print("\nError: folder path cannot be empty.")
         logging.error("Folder path cannot be empty.")
         return
     
     folder = convert_to_path(path_string)
 
     if not path_exists(folder):
-        print("Error: the informed path does not exist.")
+        print("\nError: the informed path does not exist.")
         logging.error(f"Path does not exist: {folder}")
         return
 
     if not path_is_folder(folder):
-        print("Error: the informed path is not a folder.")
+        print("\nError: the informed path is not a folder.")
         logging.error(f"Path is not a folder: {folder}")
         return
 

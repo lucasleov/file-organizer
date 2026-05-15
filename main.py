@@ -17,10 +17,10 @@ def get_arguments():
 
 def main() -> None:
     setup_logging()
-    
-    print("\nFile organizer\n")
 
     args = get_arguments()
+    
+    print("\nFile organizer\n")
 
     if args.folder_path:
         path = args.folder_path

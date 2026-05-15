@@ -37,16 +37,27 @@ Read a folder, identify files by extension, move files to corresponding subfolde
 
 
 file\_organizer/
+
 ├── app/
+
 │   ├── **init**.py
+
 │   ├── organizer.py
+
 │   └── utils.py
+
 ├── logs/
+
 │   └── .gitkeep
+
 ├── tests/
+
 ├── main.py
+
 ├── README.md
+
 ├── requirements.txt
+
 └── .gitignore
 
 
@@ -106,10 +117,15 @@ Before:
 
 
 Downloads/
+
 ├── photo.jpg
+
 ├── notes.txt
+
 ├── document.pdf
+
 ├── script.py
+
 └── file\_without\_extension
 
 
@@ -119,15 +135,25 @@ After:
 
 
 Downloads/
+
 ├── jpg/
+
 │   └── photo.jpg
+
 ├── txt/
+
 │   └── notes.txt
+
 ├── pdf/
+
 │   └── document.pdf
+
 ├── py/
+
 │   └── script.py
+
 └── no\_extension/
+
 └── file\_without\_extension
 
 

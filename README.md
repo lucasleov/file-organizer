@@ -197,6 +197,66 @@ The log records actions such as:
 
 
 
+## Tests
+
+
+
+This project includes basic automated tests using pytest.
+
+
+
+
+
+Currently tested:
+
+
+
+
+
+* file extension detection;
+* lowercase normalization of extensions;
+* files without extension;
+* hidden files without extension;
+* path existence validation;
+* folder validation;
+* conversion from string to Path;
+* moving files to a destination folder using temporary test folders.
+
+
+
+Not tested yet:
+
+
+
+* command-line argument parsing;
+* logging;
+* permission errors;
+* full interactive execution;
+* full folder organization flow.
+
+
+
+Future testing improvements:
+
+
+
+- test duplicated file behavior;
+- test permission error handling;
+- test full organize_folder() flow with tmp_path;
+- test command-line execution.
+
+
+
+## Running tests
+
+To run the automated tests:
+
+
+python -m pytest -v
+
+
+
+
 ## Status
 
 

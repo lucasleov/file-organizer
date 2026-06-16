@@ -27,8 +27,8 @@ Read a folder, identify files by extension, move files to corresponding subfolde
 * Handles files without extension
 * Ignores subfolders
 * Handles duplicated files without overwriting them
-* Logs actions and erros
-* Can be used interactively or with a command-line argument for the folder path
+* Logs actions and errors
+* Can be used either interactively or with a command-line argument for the folder path
 
 
 
@@ -51,6 +51,8 @@ file\_organizer/
 │   └── .gitkeep
 
 ├── tests/
+
+│   └── test\_utils.py
 
 ├── main.py
 
@@ -154,7 +156,7 @@ Downloads/
 
 └── no\_extension/
 
-└── file\_without\_extension
+&#x20;   └── file\_without\_extension
 
 
 
@@ -240,10 +242,10 @@ Future testing improvements:
 
 
 
-- test duplicated file behavior;
-- test permission error handling;
-- test full organize_folder() flow with tmp_path;
-- test command-line execution.
+* test duplicated file behavior;
+* test permission error handling;
+* test full organize\_folder() flow with tmp\_path;
+* test command-line execution.
 
 
 
@@ -252,7 +254,9 @@ Future testing improvements:
 To run the automated tests:
 
 
+
 python -m pytest -v
+
 
 
 

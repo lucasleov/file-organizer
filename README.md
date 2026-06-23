@@ -6,83 +6,90 @@ A simple Python command-line tool that organizes files in a folder by extension.
 
 
 
-## Objective
+---
+
+## Project Goals
 
 
 
-Read a folder, identify files by extension, move files to corresponding subfolders, and generate a simple log of the actions performed.
+The goal of this project is to automate the organization of files in a folder by grouping them into subfolders based on their extensions.
+
+It was also developed as a portfolio project to practice Python, command-line interfaces, file handling, logging, automated tests, and basic project organization.
 
 
+
+---
 
 ## Features
 
 
-
-* Reads a folder path informed by the user
-* Validates if the path exists
-* Validates if the path is a folder
-* Identifies file extensions
-* Creates subfolders based on extensions
-* Moves files to the corresponding subfolders
-* Handles files without extension
-* Ignores subfolders
-* Handles duplicated files without overwriting them
-* Logs actions and errors
-* Can be used either interactively or with a command-line argument for the folder path
+- Reads a folder path provided by the user
+- Validates whether the path exists and is a folder
+- Organizes files into subfolders based on their extensions
+- Handles files without extension
+- Ignores existing subfolders
+- Prevents duplicate files from being overwritten
+- Supports both interactive and command-line usage
+- Generates logs for actions and errors
+- Includes basic automated tests with pytest
 
 
 
-## Project structure
+---
+
+## Technologies Used
 
 
 
-file\_organizer/
-
-├── app/
-
-│   ├── **init**.py
-
-│   ├── organizer.py
-
-│   └── utils.py
-
-├── logs/
-
-│   └── .gitkeep
-
-├── tests/
-
-│   └── test\_utils.py
-
-├── main.py
-
-├── README.md
-
-├── requirements.txt
-
-└── .gitignore
+- Python
+- pathlib
+- argparse
+- logging
+- pytest
 
 
 
-## How to run
+---
+
+## How to Install
 
 
 
-* Clone the repository:
+1. Clone the repository:
 
 
 
-git clone <repository-url>
-cd file\_organizer
+```bash
+git clone https://github.com/lucasleov/file-organizer.git
+cd file-organizer
+```
 
 
 
-* Create and activate the virtual environment:
+2. Create and activate the virtual environment:
 
 
 
+```bash
 python -m venv .venv
-.venv\\\\Scripts\\\\activate
+.venv\Scripts\activate
+```
+
+
+
+3. Install dependencies:
+
+
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
+---
+
+## How to Run
 
 
 
@@ -90,7 +97,9 @@ python -m venv .venv
 
 
 
+```bash
 python main.py
+```
 
 
 
@@ -98,19 +107,24 @@ python main.py
 
 
 
-python main.py "C:\\path\\to\\your\\folder"
-
+```bash
+python main.py "C:\path\to\your\folder"
+```
 
 
 * Show help:
 
 
 
+```bash
 python main.py --help
+```
 
 
 
-## Example
+---
+
+## Usage Example
 
 
 
@@ -118,6 +132,7 @@ Before:
 
 
 
+```text
 Downloads/
 
 ├── photo.jpg
@@ -128,7 +143,17 @@ Downloads/
 
 ├── script.py
 
-└── file\_without\_extension
+└── file_without_extension
+```
+
+
+* Run the script in the terminal:
+
+
+
+```bash
+python main.py "C:\path\to\Downloads"
+```
 
 
 
@@ -136,6 +161,7 @@ After:
 
 
 
+```text
 Downloads/
 
 ├── jpg/
@@ -154,11 +180,41 @@ Downloads/
 
 │   └── script.py
 
-└── no\_extension/
+└── no_extension/
 
-&#x20;   └── file\_without\_extension
+    └── file_without_extension
+```
 
 
+
+---
+
+## How to Run Tests
+
+
+
+```bash
+python -m pytest -v
+```
+
+
+
+Currently tested:
+
+
+
+* file extension detection;
+* lowercase normalization of extensions;
+* files without extension;
+* hidden files without extension;
+* path existence validation;
+* folder validation;
+* conversion from string to Path;
+* moving files to a destination folder using temporary test folders.
+
+
+
+---
 
 ## Error handling
 
@@ -175,6 +231,8 @@ The program handles:
 
 
 
+---
+
 ## Logging
 
 
@@ -183,7 +241,7 @@ The program writes logs to:
 
 
 
-logs/file\_organizer.log
+logs/file_organizer.log
 
 
 
@@ -199,30 +257,49 @@ The log records actions such as:
 
 
 
-## Tests
+---
+
+## Project Structure
+
+
+```text
+file_organizer/
+
+├── app/
+
+│   ├── __init__.py
+
+│   ├── organizer.py
+
+│   └── utils.py
+
+├── logs/
+
+│   └── .gitkeep
+
+├── tests/
+
+│   └── test_utils.py
+
+├── main.py
+
+├── README.md
+
+├── requirements.txt
+
+└── .gitignore
+```
 
 
 
-This project includes basic automated tests using pytest.
+---
 
+## Limitations
 
-
-
-
-Currently tested:
-
-
-
-
-
-* file extension detection;
-* lowercase normalization of extensions;
-* files without extension;
-* hidden files without extension;
-* path existence validation;
-* folder validation;
-* conversion from string to Path;
-* moving files to a destination folder using temporary test folders.
+* At the moment, the program only organizes files by extension. It does not support custom organization rules.
+* Duplicated files, or files with the same name, will not be moved to the destination subfolder and an error entry will be made in the log. The program does not automatically suggest or apply alternative filenames.
+* Subfolders will be completely ignored.
+* Some parts of the project could be further improved to support more complete automated tests.
 
 
 
@@ -238,32 +315,32 @@ Not tested yet:
 
 
 
+---
+
+## Next Steps
+
+
+
 Future testing improvements:
 
 
 
 * test duplicated file behavior;
 * test permission error handling;
-* test full organize\_folder() flow with tmp\_path;
+* test full organize_folder() flow with tmp_path;
 * test command-line execution.
 
 
 
-## Running tests
+---
 
-To run the automated tests:
+## Author
 
+Lucas Léo Viégas
 
+---
 
-python -m pytest -v
+## Project Status
 
-
-
-
-
-## Status
-
-
-
-Version 1.0.0 - First stable version of the project.
-
+Functional first portfolio version.
+Release: v1.0.0
